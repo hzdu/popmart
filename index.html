@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Mart Toys - Collect Your Surprise!</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- Tailwind CSS CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery CDN -->
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="bg-pink-500 py-6 px-4 shadow-md">
+            <!-- Navigation and site branding will go here -->
+            <h1 class="text-3xl font-bold text-white text-center">Pop Mart Wonders</h1>
+        </header>
+
+        <main class="py-12 space-y-12">
+            <!-- Product showcases, especially blind boxes, will be here -->
+            <section id="hero" class="text-center py-16 sm:py-24">
+                <h2 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">Unbox Your Next Obsession!</h2>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">Experience the thrill of surprise with our exclusive collections. Each box holds a secret treasure waiting to be discovered!</p>
+                <button id="explore-button" class="mt-10 px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-md font-semibold text-lg">Explore Collections</button>
+            </section>
+
+            <section id="products">
+                <h3 class="text-3xl font-bold mb-12 text-center">Featured Blind Box Series</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <img src='https://via.placeholder.com/300x200.png?text=Pop+Mart+Series+1' alt='Series 1 Image' class="w-full h-48 object-cover rounded-md mb-4">
+                        <h4 class="text-xl font-semibold mb-2">Series Name 1</h4>
+                        <p class="text-gray-700 mb-4">Short description of this amazing series.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <img src='https://via.placeholder.com/300x200.png?text=Pop+Mart+Series+2' alt='Series 2 Image' class="w-full h-48 object-cover rounded-md mb-4">
+                        <h4 class="text-xl font-semibold mb-2">Series Name 2</h4>
+                        <p class="text-gray-700 mb-4">Discover the unique characters in this collection.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <img src='https://via.placeholder.com/300x200.png?text=Pop+Mart+Series+3' alt='Series 3 Image' class="w-full h-48 object-cover rounded-md mb-4">
+                        <h4 class="text-xl font-semibold mb-2">Series Name 3</h4>
+                        <p class="text-gray-700 mb-4">Limited edition! Don't miss out.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 px-4 text-center">
+        <!-- Contact information, WhatsApp link, and other footer content -->
+        <p class="mb-4"><a href="https://wa.me/8612345678900" target="_blank" class="text-pink-400 hover:text-pink-300 underline">Contact us on WhatsApp</a></p>
+        <p>&copy; 2023 Pop Mart Wonders. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery script will be added here later -->
+    <script>
+    $(document).ready(function(){
+      $("#explore-button").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          // event.preventDefault(); // Not strictly needed for a button, but good practice if it were an <a>
+        }
+
+        // Store hash
+        var hash = '#products'; // Target element's ID
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          // window.location.hash = hash; // Optional: if you want to update the URL
+        });
+      });
+    });
+    </script>
+</body>
+</html>
